@@ -71,9 +71,9 @@ def main(end=None):
     import pygame
     pygame.mixer.init()
     pygame.mixer.music.load("Tetris_sound.mp3")
-    pygame.mixer.music.play(loops=100000)
-    import random
+    #pygame.mixer.music.play(loops=100000)
     while gamelib.loop(200) and end!=True:
+        if end != False: pygame.mixer.music.play(1)
         # Dibujar la pantalla con el estado del juego
         gamelib.draw_begin()
         #Draw backgrond:
