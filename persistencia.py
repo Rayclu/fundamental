@@ -1,4 +1,4 @@
-import DBdir as DB
+import ConociendoSocket.DBdir as DB
 import socket as sk
 import sqlite3 as sq
 import gamelib as gb
@@ -75,12 +75,12 @@ def saveScore(ranking:list,pts : int):
     cur.execute("CREATE TABLE IF NOT EXISTS points(nickname, rank)")
     #----------------------------------------
     #----------------------------------------
-    if len(ranking_cleaned) < 11 or pts >min(ranking_cleaned):
+    if len(ranking_cleaned) < 11 or pts > min(ranking_cleaned):
         cur.execute(f"INSERT INTO points(nickname, rank) VALUES (?, ?)", (player[0], player[1]))
         database.commit()
         database.close()
         ranking.append(player)
-        ranking=_order(ranking)
+        ranking = _order(ranking)
         return
     else:
         database.commit()
@@ -105,13 +105,13 @@ def _order(ranking: list):
             menor.append(play)
         else:
             mayor.append(play)
-    menor=_order(menor)
-    mayor=_order(mayor)
+    menor = _order(menor)
+    mayor = _order(mayor)
 
     return mayor+[pivote]+menor
-    
 
-    """if len(ranking)==0:
+
+"""if len(ranking)==0:
         nickname = gb.input("Add your name, congratulations, you are in the top ten🥳:")
         player=(f"{nickname}", pts)
         ranking.append(player)
@@ -121,7 +121,7 @@ def _order(ranking: list):
                 file.write(f"{nickname}|{pts} \n")
         return"""
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    """rankeos=[ranking[i][1] for i in range(len(ranking))]
+"""rankeos=[ranking[i][1] for i in range(len(ranking))]
     
     if pts > min(rankeos) or len(ranking)<=12:
         if len(ranking)==12:
@@ -136,7 +136,7 @@ def _order(ranking: list):
                 file.write(f"{usrs[0]}|{usrs[1]} \n")
     else:
         return gb.draw_text("You are a noob, nigger 🫵🏼!", 50, 50, fill="Cyan", anchor='nw')"""
-    """
+"""
     players=[]
     for player in range(len(ranking)):
             if ranking[player][1] <= rank or len(ranking)<12:

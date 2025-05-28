@@ -1,2 +1,6 @@
 .vscode/
 .venv/
+background_resized.gif
+points.csv
+Tetris_sound.mp3
+etc/
