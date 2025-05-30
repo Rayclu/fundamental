@@ -4,3 +4,10 @@ background_resized.gif
 points.csv
 Tetris_sound.mp3
 etc/
+
+ConociendoDjango/djangoTutorial/mysite/__pycache__
+__pycache__/
+ConociendoDjango/djangoTutorial/boludeo/
+ConociendoDjango/djangoTutorial/mysite/
+
+
