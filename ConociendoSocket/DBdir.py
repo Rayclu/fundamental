@@ -1,12 +1,12 @@
 import socket as sk
 import sqlite3 as sq
 
-def startServer(url = 'localhost', port = 8000):
+def startServer(url='0.0.0.0', port=8383):
     serverSocket = sk.socket(sk.AF_INET, sk.SOCK_STREAM)
     serverSocket.bind((url, port))
     serverSocket.listen(1)
 
-    #print(f"Listening in: {url}:{port}")
+    print(f"Listening in: {url}:{port}")
 
     while True:
         client_socket, address = serverSocket.accept()
@@ -14,5 +14,5 @@ def startServer(url = 'localhost', port = 8000):
         client_socket.sendall(b'Hello, client!')
         client_socket.close()
 
-
-startServer()
+if __name__ == "__main__":
+    startServer()
